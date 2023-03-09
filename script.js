@@ -27,6 +27,7 @@ let kunci = {
 const clickSound = document.getElementById("click-sound");
 const correct = document.getElementById("correct-sound");
 const wrong = document.getElementById("wrong-sound");
+const cd = document.getElementById("cd-sound");
 
 let bankSoal = [
   {
@@ -106,17 +107,18 @@ document.getElementById("song").addEventListener("ended", () => {
 });
 
 function countdown() {
+  cd.play();
   seconds--;
   document.getElementById("timer").textContent = seconds + " seconds";
   if (seconds <= 0) {
     clearInterval(timer);
     document.getElementById("timer").textContent = alert("Time's up!");
-    if (count === 10){
-        window.location.href = "https://www.youtube.com/watch?v=mx86-rTclzA";
-    }else {
-    seconds = 11;
-    timer;
-    change(); 
+    if (count === 10) {
+      window.location.href = "https://www.youtube.com/watch?v=mx86-rTclzA";
+    } else {
+      seconds = 11;
+      timer;
+      change();
     }
   }
 }
@@ -124,10 +126,13 @@ function countdown() {
 // let score = document.getElementById("score").innerText
 
 const change = (answer) => {
-
+  cd.pause();
+  cd.currentTime = 0;
   clearInterval(timer);
   checkAnswer(answer);
-  document.getElementById("testing").textContent = `Guess The Song ${count+1}`;
+  document.getElementById("testing").textContent = `Guess The Song ${
+    count + 1
+  }`;
   document.getElementById("timer").textContent = "";
   document.querySelector("#a").textContent = bankSoal[count]["a"];
   document.querySelector("#b").textContent = bankSoal[count]["b"];
@@ -144,8 +149,8 @@ const change = (answer) => {
     ).innerHTML = `<marquee>Special Question +1000 Score</marquee>`;
   } else {
     document.getElementById(
-        "running"
-      ).innerHTML = `<marquee>Foxy Song Guessing</marquee>`;
+      "running"
+    ).innerHTML = `<marquee>Foxy Song Guessing</marquee>`;
   }
 
   if (count === 10) {
@@ -176,12 +181,12 @@ const checkAnswer = (selected) => {
     document.getElementById("score").innerText = `Score ${score}`;
   } else {
     if (count === 7) {
-        score += 1000;
-        wrong.play();
-        document.getElementById("song").play();
+      score += 1000;
+      wrong.play();
+      document.getElementById("song").play();
     } else {
       wrong.play();
-    document.getElementById("song").play();  
+      document.getElementById("song").play();
     }
     document.getElementById("score").innerText = `Score ${score}`;
   }
@@ -215,7 +220,7 @@ const startGame = () => {
   document.querySelector("#c").textContent = bankSoal[0]["c"];
   document.querySelector("#d").textContent = bankSoal[0]["d"];
   document.querySelector("#song").src = bankSoal[0]["musicSrc"];
-  document.getElementById("song").loop = false
+  document.getElementById("song").loop = false;
 };
 
 document.addEventListener("click", function () {
