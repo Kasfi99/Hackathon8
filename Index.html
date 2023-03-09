@@ -14,12 +14,8 @@
 <body>
     <div class="banner">
         <div id="navbar" style="height: 20%">
-            <button>top button</button>
         </div>
         <div id="content" style="height:50%; width: 70%; margin:auto; border-radius: 50px; background-color: white; display: flex; align-items: center; justify-content: center; flex-direction: column;">
-            <audio id="my-audio" controls>
-                <source src="E:\Coding Hacktiv8\hackathon\Kerangka\music\Palm_Reader.mp3" type="audio/mpeg">
-              </audio>
               
               <script>
                 window.onload = function() {
@@ -30,36 +26,24 @@
                   }
                 }
               </script>
-            <h1>music 1</h1>
-            <h2 id="soal">____________adalah jenis lagu buatan _________</h2>
+            <h1>SCORE</h1>
+            <h2 id="soal">Skor akhir anda adalah ....</h2>
             <div class="row my-2">
-                <div class="col-sm-6">
-                  <button class="btn btn-primary w-100 my-2 mx-2">A. Choice 1</button>
-                  <button class="btn btn-primary w-100 my-2 mx-2">B. Choice 2</button>
-                </div>
-                <div class="col-sm-6">
-                  <button class="btn btn-primary w-100 my-2 mx-2">C. Choice 3</button>
-                  <button class="btn btn-primary w-100 my-2 mx-2">D. Choice 4</button>
-                </div>
-              </div>
+            </div>
               
-            <button class="btn btn-primary" onclick="nextQuestion(2)">next</button>
+            <button class="btn btn-primary" onclick="nextQuestion(2)">Main lagi??</button>
         </div>
         <div id="foot" style="height: 30%;">
-            <button>feet button</button>
-
         </div>
     </div>
-    <script>
+    <!-- <script>
         function nextQuestion(num) {
            let soal = document.getElementById("content")
            if (num <= 10){
-            soal.innerHTML = `<h2 id='soal'>soal ${num}</h2><h1>music ${num}</h1><button class="btn btn-primary" onclick="nextQuestion(${num+1})">next</button>`
-           } else {
-
+            // soal.innerHTML = `<h2 id='soal'>soal ${num}</h2><h1>music ${num}</h1><button class="btn btn-primary" onclick="nextQuestion(${num+1})">next</button>`
            }
         }
-    </script>
+    </script> -->
 </body>
 
 </html>
