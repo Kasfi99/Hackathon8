@@ -1,7 +1,5 @@
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,21 +10,37 @@
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Climate+Crisis&display=swap');
+        #content {
+            display: none;
+            height: 50%;
+            width: 70%;
+            margin: auto;
+            border-radius: 50px;
+            background-color: white;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        #start-container {
+            display: flex;
+            justify-content: center;
+        }
     </style>
 </head>
-<body style="font-family: 'Climate Crisis', cursive;"> <!--adding google font-->
+<body style="font-family: 'Climate Crisis', cursive;">
     <div class="banner">
         <div id="navbar" style="height: 20%">
-            <!-- <button>top button</button> -->
         </div>
-        <p id="timer"></p>
-        <button onclick="startGame()" id="start" class="btn btn-primary" >Start</button>
-        <div id="content" style=" display:none; height:50%; width: 70%; margin:auto; border-radius: 50px; background-color: white; align-items: center; justify-content: center; flex-direction: column;">
+        <p id="timer" style="margin: auto ;"></p>
+        <div id="start-container">
+            <button onclick="startGame()" id="start" class="btn btn-primary">Start</button>
+        </div>
+        <div id="content">
             <h3 id="score" style="font-size: medium;">Score 0</h3>
-            <h1 id="testing" >Guess The Song</h1>
-                <audio id="song" controls >
-                    <source src="/Hackathon8/assets/1.mp3" type="audio/mpeg">
-                </audio>
+            <h1 id="testing">Guess The Song</h1>
+            <audio id="song" controls>
+                <source src="/Hackathon8/assets/1.mp3" type="audio/mpeg">
+            </audio>
             <div class="d-flex justify-content-around w-100 my-2">
                 <button onclick="change('a')" id="a" class="btn btn-primary"></button>
                 <button onclick="change('c')" id="c" class="btn btn-primary"></button>
@@ -37,7 +51,6 @@
             </div>
         </div>
         <div id="foot" style="height: 30%;">
-            <!-- <button>feet button</button> -->
         </div>
     </div>
     <script src="script.js"></script>     
